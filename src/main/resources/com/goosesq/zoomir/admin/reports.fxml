@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="801.0" style="-fx-background-color: #019934;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.goosesq.zoomir.AdminReports">
+   <children>
+      <!-- Заголовок -->
+      <AnchorPane prefHeight="42.0" prefWidth="699.0" style="-fx-background-color: #469e63; -fx-border-color: WHITE; -fx-background-radius: 12; -fx-border-radius: 12;">
+         <children>
+            <Label layoutX="221.0" layoutY="5.0" prefHeight="32.0" prefWidth="359.0" text="Таблица &quot;Отчет по продажам&quot;" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <!-- Логотип -->
+      <ImageView fitHeight="55.0" fitWidth="178.0" layoutX="609.0" layoutY="531.0">
+         <image>
+            <Image url="@../logo.png" />
+         </image>
+      </ImageView>
+
+      <!-- Таблица -->
+      <TableView fx:id="salesTable" layoutX="238.0" layoutY="79.0" prefHeight="442.0" prefWidth="549.0">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="productColumn" prefWidth="150.0" text="Товар" />
+            <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="Кол-во" />
+            <TableColumn fx:id="priceColumn" prefWidth="117.0" text="Цена" />
+            <TableColumn fx:id="totalColumn" prefWidth="131.0" text="Общ. Стоим." />
+        </columns>
+      </TableView>
+
+      <!-- Кнопки управления -->
+      <AnchorPane layoutX="373.0" layoutY="531.0" onMouseClicked="#handleRefresh" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fx:id="btn_refresh" fitHeight="32.0" fitWidth="32.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/free-icon-font-refresh-3917293.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="238.0" layoutY="531.0" onMouseClicked="#handleAddSale" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fx:id="btn_add" fitHeight="32.0" fitWidth="32.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/free-icon-font-plus-3917172.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="305.0" layoutY="531.0" onMouseClicked="#handleDeleteSale" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fx:id="btn_delete" fitHeight="32.0" fitWidth="32.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/free-icon-font-trash-3917242.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+
+      <!-- Поиск -->
+      <TextField fx:id="tf_id" layoutX="14.0" layoutY="79.0" prefHeight="55.0" prefWidth="184.0" promptText="ID">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tf_product" layoutX="14.0" layoutY="150.0" prefHeight="55.0" prefWidth="184.0" promptText="Товар">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="tf_quantity" layoutX="14.0" layoutY="226.0" prefHeight="55.0" prefWidth="184.0" promptText="Количество">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </TextField>
+      <AnchorPane layoutX="428.0" layoutY="514.0" prefHeight="89.0" prefWidth="178.0">
+         <children>
+            <TextField fx:id="tf_search" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleSearch" prefHeight="55.0" prefWidth="149.0" promptText="Поиск ID">
+               <font>
+                  <Font name="Comic Sans MS" size="19.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="122.0" layoutY="26.0" opacity="0.35">
+               <image>
+                  <Image url="@../img/free-icon-font-search-3917061.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+
+      <!-- Выход -->
+      <AnchorPane layoutX="698.0" prefHeight="55.0" prefWidth="103.0" style="-fx-background-color: #de5f5f; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="24.0" layoutX="63.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/free-icon-font-exit-3917214.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="17.0" text="Выход">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <!-- На главное меню -->
+      <AnchorPane fx:id="btn_back" layoutX="13.0" layoutY="370.0" onMouseClicked="#goBack" prefHeight="217.0" prefWidth="184.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="72.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/free-icon-font-arrow-left-from-arc-16497794.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="41.0" layoutY="105.0" prefHeight="42.0" prefWidth="103.0" text="На главное меню">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="tf_price" layoutX="14.0" layoutY="300.0" prefHeight="55.0" prefWidth="184.0" promptText="Цена">
+         <font>
+            <Font name="Comic Sans MS" size="19.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

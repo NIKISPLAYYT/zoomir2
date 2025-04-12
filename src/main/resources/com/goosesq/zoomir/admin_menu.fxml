@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #019934;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.goosesq.zoomir.AdminMenu">
+   <children>
+      <!-- Шапка -->
+      <AnchorPane prefHeight="41.0" prefWidth="600.0" style="-fx-background-color: #469e63; -fx-border-color: WHITE; -fx-background-radius: 12; -fx-border-radius: 12;">
+         <children>
+            <Label layoutX="161.0" layoutY="5.0" text="Меню администратора" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <!-- Блок редактирования заказов -->
+      <AnchorPane fx:id="pane_orders" layoutX="14.0" layoutY="59.0" onMouseClicked="#handleOrders" prefHeight="138.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="78.0" layoutX="36.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="43.0" layoutY="118.0" text="Ред. Заказы">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <!-- Блок редактирования товаров -->
+      <AnchorPane fx:id="pane_products" layoutX="225.0" layoutY="59.0" onMouseClicked="#handleProducts" prefHeight="138.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="78.0" layoutX="36.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/free-icon-font-shopping-bag-3916639.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="40.0" layoutY="118.0" text="Ред. Товары">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <!-- Блок редактирования отчетов -->
+      <AnchorPane fx:id="pane_reports" layoutX="436.0" layoutY="59.0" onMouseClicked="#handleReports" prefHeight="138.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="78.0" layoutX="36.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/free-icon-font-chart-line-up-7661407.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="40.0" layoutY="118.0" text="Ред. Отчеты">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_about_dev" layoutX="14.0" layoutY="206.0" onMouseClicked="#showAboutDev" prefHeight="78.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="55.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/free-icon-font-portrait-3917494.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="32.0" layoutY="63.0" text="О разработчике">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_about_prog" layoutX="225.0" layoutY="206.0" onMouseClicked="#showAboutProg" prefHeight="78.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="56.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/free-icon-font-table-tree-8778078.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="38.0" layoutY="64.0" text="О программе">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_exit_app" layoutX="436.0" layoutY="206.0" onMouseClicked="#exitApp" prefHeight="88.0" prefWidth="150.0" style="-fx-background-color: #de5f5f; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="56.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/free-icon-font-exit-3917214.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="57.0" layoutY="65.0" text="Выход">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pane_logout" layoutX="14.0" layoutY="303.0" onMouseClicked="#logout" prefHeight="89.0" prefWidth="363.0" style="-fx-background-color: white; -fx-border-color: #bababa; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="41.0" fitWidth="44.0" layoutX="161.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/free-icon-font-arrow-left-from-arc-16497794.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="107.0" layoutY="65.0" text="Выход из учетной записи">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="55.0" fitWidth="178.0" layoutX="422.0" layoutY="320.0">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
